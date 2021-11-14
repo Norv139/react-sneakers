@@ -1,11 +1,13 @@
 //import CartItem from
 
 
-function Driwer(){
+function Driwer(props){
     return(
+      <div className='overlay'>
+      
         <div className='driwer'>
 
-        <h2>Корзина <img className='remove-btn'src='./img/btn_remove.svg' /></h2>
+        <h2>Корзина <img onClick={props.onClose} className='remove-btn'src='./img/btn_remove.svg' /></h2>
 
         <div className='items'>
           
@@ -56,6 +58,7 @@ function Driwer(){
         </div>
 
       </div>
+    </div>
     )
 }
 

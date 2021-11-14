@@ -1,15 +1,17 @@
 import style from './Card.module.scss'
-import React, {useState} from "react"
+import React from "react"
 
 console.log(style);
 
 function Cart(props){
 
-  const [isAdded, serIsAdded] = useState(false)
+  const [isAdded, serIsAdded] = React.useState(false)
 
   const onClickPlus = () => {
     serIsAdded(!isAdded)
   }
+
+  
 
   return(
     <div className='card' onClick={props.onClickCard}>
@@ -30,7 +32,7 @@ function Cart(props){
           <b>{props.price} руб.</b>
         </div>
         <div className={isAdded ? 'plus_check':'plus'}>
-          
+
           <img  
           onClick={onClickPlus} width={11} height={11}
           src={isAdded ? './img/btn-check.svg':'./img/btn-plus-1.svg'}/>
