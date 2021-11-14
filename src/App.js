@@ -1,6 +1,6 @@
 import Card from "./components/Card/";
 import Header from "./components/Header";
-import Driwer from "./components/Driwer"
+import Driwer from "./components/Driwer";
 
 const arr = [
   { title: "Nike Air Huarache", price: '10799', img: "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/efb42610-7136-4808-bf8a-7133632ac8b9/%D0%BA%D1%80%D0%BE%D1%81%D1%81%D0%BE%D0%B2%D0%BA%D0%B8-air-huarache-l5Pg0s.png"},
@@ -39,7 +39,9 @@ function App() {
                 title={obj.title}
                 price={obj.price} 
                 imgUrl={obj.img}
-                priKlicks={()=>alert(obj.title)}
+
+                onPlus={()=>alert(obj.title)}
+                onFavorite={()=>alert("onFavorite "+ obj.title)}
                 />))}
           </div>
         </div>

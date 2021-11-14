@@ -4,12 +4,12 @@ function Header(){
         <header className='d-flex justify-between align-center p-40'>
 
             <div className='d-flex align-center'>
-            <img width={40} height={40} src='img/logo192.png'></img>
+                <img width={40} height={40} src='img/logo192.png'></img>
 
-            <div>
-                <h3 className='text-uppercase'>React sneakers</h3>
-                <p>Магазин лучших кросовок</p>
-            </div>
+                <div>
+                    <h3 className='text-uppercase'>React sneakers</h3>
+                    <p>Магазин лучших кросовок</p>
+                </div>
             </div>
 
             <ul className='d-flex '>
