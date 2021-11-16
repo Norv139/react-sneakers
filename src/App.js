@@ -9,11 +9,15 @@ import axios from "axios";
 //  { "title": "", "price": , "img": ""},
 /*const axios = require('axios').default;
 
-axios.get('https://6191576f41928b0017690030.mockapi.io/items')
-  .then(function (response) {
-    // handle success
-    console.log(response.data);
-    setItems(response.data)
+
+
+  fetch('https://6191576f41928b0017690030.mockapi.io/items')
+  .then((res)=>{
+    return res.json();
+  })
+  .then(json=>{
+    console.log(json);
+    setItems(json)
   })
 */
 
@@ -24,15 +28,16 @@ function App() {
 
 const [items, setItems] = React.useState([]);
 const [cartOpened, setCartOpened] = React.useState(false)
+
 React.useEffect(()=>{
-  fetch('https://6191576f41928b0017690030.mockapi.io/items')
-  .then((res)=>{
-    return res.json();
+
+  axios.get('https://6191576f41928b0017690030.mockapi.io/items')
+  .then(function (response) {
+    // handle success
+    console.log(response.data);
+    setItems(response.data)
   })
-  .then(json=>{
-    console.log(json);
-    setItems(json)
-  })
+
 }, [])
 
 
