@@ -7,35 +7,37 @@ function Driwer(props){
       
         <div className='driwer'>
 
-        <h2>Корзина <img onClick={props.onClose} className='remove-btn'src='./img/btn_remove.svg' /></h2>
+        <h2>Корзина <img onClick={props.onClose} className='remove-btn'src='./img/btn_remove.svg' alt='img' /></h2>
 
-        <div className='items'>
+        <div  className='items'>
+        {
+          props.items.length > 0 ?
+
+          <div>
+          {props.items.map((obj)=>(
+          <div className='cartItem d-flex align-center mb-20'>
+
+            <img width={133} height={133} src={obj.img} alt='img'/>
+
+            <div className='cartText mr-20'>
+              <p className='md-5'>{obj.title}</p>
+              <b>{obj.price} руб.</b>
+            </div>
+
+            <img onClick={()=>{props.onRemove(obj.id)}} className='remove-btn' src='./img/btn_remove.svg' alt='img'/>
+          </div>
+          ))}
+          </div> 
+        :
+        <div className="cart_none">
           
-          <div className='cartItem d-flex align-center mb-20'>
+          <img width={300}  src="https://cdn.the-village.ru/the-village.ru/post_image-image/SDbLTwiH2GdnM11LKNmcVQ.png" />
 
-            <div style={{backgroundImage: 'url(https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/380697/02/sv01/fnd/RUS/w/1000/h/1000/fmt/png)' }} className='cartItemImg'></div>
-
-            <div className='cartText mr-20'>
-              <p className='md-5'>Test text</p>
-              <b>12 999 руб.</b>
-            </div>
-
-            <img className='remove-btn'src='./img/btn_remove.svg' />
-          </div>
-
-          <div className='cartItem d-flex align-center mb-20'>
-
-            <div style={{backgroundImage: 'url(https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/380697/02/sv01/fnd/RUS/w/1000/h/1000/fmt/png)' }} className='cartItemImg'></div>
-
-            <div className='cartText mr-20'>
-              <p className='md-5'>Test text</p>
-              <b>12 999 руб.</b>
-            </div>
-
-            <img className='remove-btn'src='./img/btn_remove.svg' />
-          </div>
-
+          <h3>Добавте в корзину товар</h3>
         </div>
+        }
+        </div>
+
 
         <div className='cartTotalBlock'>
           <ul>
@@ -54,7 +56,7 @@ function Driwer(props){
 
           </ul>
 
-          <button className='greenButton'>Оформить заказ <img width={16} height={16} src='./img/rightArrows.svg' /></button>
+          <button className='greenButton'>Оформить заказ <img width={16} height={16} src='./img/rightArrows.svg' alt='img'/></button>
         </div>
 
       </div>

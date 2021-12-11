@@ -67,4 +67,23 @@
     margin: 10px;
   }
 
+  &:hover{
+    background: lighten(hsl(87, 100%, 86%), 5%);
+    border-radius: 5px;
+  }
+
+  &:active{
+    background: darken(#9dd558, 5%);
+    animation: submit 1s 0s;
+  }
+
+}
+
+@keyframes submit {
+  0%{
+    background: darken(#9dd558, 5%);
+  }
+  100%{
+    background: darken(#678d39, 5%);
+  }
 }
