@@ -2,6 +2,16 @@
 
 
 function Driwer(props){
+
+  function summSneakers(){
+    var arr = props.items.map(e=>e.price)
+    var sum=0;
+    for(var i=0;i<arr.length;i++){
+        sum = sum + parseInt(arr[i]);
+    }
+    return sum
+  }
+
     return(
       <div className='overlay'>
       
@@ -24,7 +34,8 @@ function Driwer(props){
               <b>{obj.price} руб.</b>
             </div>
 
-            <img onClick={()=>{props.onRemove(obj.id)}} className='remove-btn' src='./img/btn_remove.svg' alt='img'/>
+            <img onClick={()=>{props.onRemove(obj.title)}} className='remove-btn' src='./img/btn_remove.svg' alt='img'/>
+
           </div>
           ))}
           </div> 
@@ -45,15 +56,8 @@ function Driwer(props){
             <li>
               <span>Итого:</span>
               <div></div>
-              <b>12 999руб.</b>
+              <b>{summSneakers()} руб.</b>
             </li>
-
-            <li>
-              <span>Налог 5%:</span>
-              <div></div>
-              <b>1074 руб.</b>
-            </li>
-
           </ul>
 
           <button className='greenButton'>Оформить заказ <img width={16} height={16} src='./img/rightArrows.svg' alt='img'/></button>

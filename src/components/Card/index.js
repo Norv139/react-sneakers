@@ -18,9 +18,7 @@ function Cart(props){
   return(
     <div className='card' onClick={props.onClickCard}>
       <div className='favorite'>
-        <button className='button' onClick={props.onFavorite}>
-          <img src='./img/icon_heart.svg' alt='Unkiked'/>
-        </button>
+
       </div>
 
       <img width={133} height={133} src={props.img} alt='img'/>

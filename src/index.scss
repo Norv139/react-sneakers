@@ -203,6 +203,7 @@ header{
   overflow: hidden;
 
   .cartText{
+    margin-left: 5px;
     width: 200px;
     height: 100px;
   }
@@ -224,6 +225,9 @@ header{
 }
 
 .remove-btn{
+
+  margin-right: 10px;
+
   opacity: 0.5;
   cursor: pointer;
   &:hover{
