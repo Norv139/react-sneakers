@@ -2,33 +2,41 @@
 import React from "react"
 
 function Cart(props){
+  const {
+    key,
+    title,
+    price,
+    img,
+    onPlus,
+    onFavorite,
+  } = props;
 
   const [isAdded, serIsAdded] = React.useState(false)
 
   const onClickPlus = () => {
-    props.onPlus({
-      "title": props.title,
-      "price": props.price,
-      "img": props.img
+     onPlus({
+      "title":  title,
+      "price":  price,
+      "img":  img
     })
   }
 
   
 
   return(
-    <div className='card' onClick={props.onClickCard}>
+    <div className='card' onClick={()=>{}}>
       <div className='favorite'>
 
       </div>
 
-      <img width={133} height={133} src={props.img} alt='img'/>
-      <h5 className='mb-40'>{props.title}</h5>
+      <img width={133} height={133} src={ img} alt='img'/>
+      <h5 className='mb-40'>{ title}</h5>
       
       <div className='d-flex justify-between align-center'>
         
         <div className='d-flex flex-column'>
           <p>Цена:</p>
-          <b>{props.price} руб.</b>
+          <b>{ price} руб.</b>
         </div>
 
         <div className='plus'>
