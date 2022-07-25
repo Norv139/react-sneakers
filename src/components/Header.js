@@ -1,3 +1,5 @@
+//import imgLogo from '../../public/img/logo192.png'
+
 function Header(props){
 
     function summSneakers(){
@@ -14,7 +16,7 @@ function Header(props){
         <header className='d-flex justify-between align-center p-40'>
 
             <div className='d-flex align-center'>
-                <img width={40} height={40} src='img/logo192.png' alt='img'></img>
+                <img width={40} height={40} src='/img/logo192.png' alt='img'></img>
 
                 <div>
                     <h3 className='text-uppercase'>React sneakers</h3>

@@ -1,6 +1,3 @@
-//import CartItem from
-
-
 function Driwer(props){
 
   function summSneakers(){
@@ -25,7 +22,7 @@ function Driwer(props){
 
           <div>
           {props.items.map((obj)=>(
-          <div className='cartItem d-flex align-center mb-20'>
+          <div className='cartItem d-flex align-center mb-20' key={obj.id}>
 
             <img width={133} height={133} src={obj.img} alt='img'/>
 
@@ -42,7 +39,7 @@ function Driwer(props){
         :
         <div className="cart_none">
           
-          <img width={300}  src="https://cdn.the-village.ru/the-village.ru/post_image-image/SDbLTwiH2GdnM11LKNmcVQ.png" />
+          <img width={300} alt='КОТ В КОРОБКЕ' src="https://cdn.the-village.ru/the-village.ru/post_image-image/SDbLTwiH2GdnM11LKNmcVQ.png" />
 
           <h3>Добавте в корзину товар</h3>
         </div>
