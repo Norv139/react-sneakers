@@ -1,9 +1,9 @@
 import React from "react"
-
-function Cart(props){
+import { v4 as uuidv4 } from 'uuid';
+function Card(props){
 
   const {
-    _key,
+    //_key,
     title,
     price,
     img,
@@ -13,7 +13,7 @@ function Cart(props){
   const onClickPlus = () => {
     onPlus(
       {
-        'id': _key,
+        'id': uuidv4(),
         "title":  title,
         "price":  price,
         "img":  img
@@ -22,22 +22,22 @@ function Cart(props){
   }
 
   return(
-    <div className='card' onClick={()=>{}} key={_key}>
+    <div className='card' onClick={()=>{}}>
       <img width={133} height={133} src={ img} alt='img'/>
 
-      <h5 className='title mb-40'>{ title}</h5>
+      <h4 className='title mb-40'>{ title}</h4>
       
-      <div className='d-flex justify-between align-center'>
+      <div className='d-flex justify-between align-center price'>
         
-        <div className='d-flex flex-column'>
+        <div className='d-flex flex-column '>
           <p>Цена:</p>
-          <b>{ price} руб.</b>
+          <b>{ price } руб.</b>
         </div>
 
         <div className='plus' onClick={onClickPlus}>
           <img  width={11} height={11}
           src='./img/btn-plus-1.svg' alt='img'/>
-          </div>
+        </div>
 
       </div>
 
@@ -45,4 +45,4 @@ function Cart(props){
   )
 }
 
-export default Cart;
+export default Card;

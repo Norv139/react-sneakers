@@ -1,0 +1,16 @@
+
+.content{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.content__frame{
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px ;
+    border: 1px solid #f3f3f3;
+
+    width: 40vh;
+    
+}
