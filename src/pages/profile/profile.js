@@ -1,4 +1,4 @@
-import { useMemo } from "react"
+import { useEffect, useMemo } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { guestMode } from "../../services/action/guestMode"
 
@@ -6,8 +6,13 @@ function Profile (){
     const dispatch = useDispatch()
 
 
-    const userData = useSelector(store=>store.user.userData)
+    const userData_ = useSelector(store=>store.user.userData)
 
+    useEffect(()=>{
+        //dispatch(guestMode())
+    }, [dispatch])
+
+    const userData = useMemo(()=>{return userData_}, [userData_])
 
     return(
         <main className="content p-40">
@@ -21,7 +26,10 @@ function Profile (){
                 </li>
             </ul>
 
-            <button onClick={()=>{dispatch(guestMode())}}>Редактировать</button>
+            <button onClick={()=>{
+                    dispatch(guestMode())
+                }}>гостивой режим</button>
+
 
         </main>
     )

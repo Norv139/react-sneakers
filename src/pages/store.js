@@ -1,5 +1,5 @@
-import Card from "../components/Card/";
-import ShoppingCart from "./shoppingCart";
+import Card from "../components/card";
+import ShoppingCart from "./shopping-сart";
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 //import itemsJ from './items.json'
@@ -23,11 +23,12 @@ function Store() {
   const dispach = useDispatch()
 
   useEffect(()=>{
+    console.log(items.length)
     if (items.length < 1){
       axios.get('https://6191576f41928b0017690030.mockapi.io/items')
       .then(
         (res) => 
-        dispach(addAllItems(res.data ))
+        dispach(addAllItems(res.data))
       );
     }
   }, [dispach])
@@ -45,9 +46,9 @@ function Store() {
   return (
 
     <main className='content p-40'>
-      <div className='md-40 d-flex align-center justify-between'>
+      <div className='md-40 d-flex justify-between'>
 
-        <h1>{(searchValue === '') ? "все кросовки" : 'Поиск: '+searchValue}</h1>
+        <h1 className='mr-20'>{(searchValue === '') ? "все кросовки" : 'Поиск: '+searchValue}</h1>
 
         <div className='search-block d-flex mb-30'>
           <img src='./img/find_icon.svg' alt='Search' />

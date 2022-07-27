@@ -1,6 +1,7 @@
-import imgLogo from './img/logo192.png'
+//import imgLogo from './img/logo192.png'
 import { useSelector, useDispatch } from "react-redux";
 import { closeOrOpenOrder } from "../../services/redusers/card";
+import { guestMode } from "../../services/action/guestMode";
 
 import {
     useNavigate
@@ -10,10 +11,10 @@ function Header(){
     const navigate = useNavigate()
 
     const itemsList = useSelector(store=>store.card.cartItems)
-    const dispach = useDispatch()
+    const dispatch = useDispatch()
 
     const openCart = ()=>{
-        dispach(closeOrOpenOrder())
+        dispatch(closeOrOpenOrder())
     }
 
     const openProfile = ()=>{
@@ -34,13 +35,15 @@ function Header(){
         <header className='d-flex justify-between align-center p-40'>
 
             <div className='d-flex align-center'>
-                <img width={40} height={40} src={imgLogo} alt='img'></img>
+                <img width={40} height={40} src={'./img/logo192.png'} alt='img'></img>
 
                 <div onClick={()=>{navigate('/')}} className='cu-p'>
                     <h3 className='text-uppercase'>React sneakers</h3>
                     <p>Магазин лучших кросовок</p>
                 </div>
             </div>
+
+        
 
             <ul className='d-flex '>
                 <li onClick={openCart} className='mr-30 cu-p'> 
@@ -51,7 +54,10 @@ function Header(){
                 <li className='cu-p'>
                     <img width={18} height={18} src='img/user.png' alt='img' onClick={openProfile} />
                 </li>
+                <li>
+                </li>
             </ul>
+            
 
       </header>
 

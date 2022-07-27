@@ -7,8 +7,9 @@ import { useSelector } from "react-redux";
 
 import Store from "./pages/store";
 import Header from "./components/header/Header";
-import ShoppingCart from "./pages/shoppingCart";
+import ShoppingCart from "./pages/shopping-сart";
 import Profile from "./pages/profile/profile";
+import Payment from "./pages/payment-form";
 
 
 function App() {
@@ -25,7 +26,7 @@ function App() {
         
         <Route path="/profile" element={<Profile/>} />
 
-        <Route path="/formpay" element={<>TEXT</>} />
+        <Route path="/formpay" element={<Payment/>} />
 
       </Routes>
     </BrowserRouter>

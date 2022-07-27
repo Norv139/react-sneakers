@@ -1,8 +1,8 @@
 import ReactDOM from "react-dom"
 
 import { useDispatch, useSelector } from "react-redux"
-import { closeOrOpenOrder } from "../services/redusers/card"
-import { dellItems } from "../services/redusers/card"
+import { closeOrOpenOrder } from "../../services/redusers/card"
+import { dellItems } from "../../services/redusers/card"
 import { useNavigate } from "react-router-dom"
 import { useEffect } from "react"
 import { v4 as uuidv4 } from 'uuid';
@@ -19,6 +19,7 @@ function ShoppingCart(){
     //navigate('/cart')
   }
   const goPay = ()=>{
+    
     if (itemsList.length >0){
       closeCart(); 
       navigate('/formpay')

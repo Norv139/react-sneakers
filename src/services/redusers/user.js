@@ -8,6 +8,17 @@ const userSlice =createSlice({
             email:'',
             password: '',
         },
+
+        userDataCards: [
+            { 
+                name: '',
+                number: '',
+                data: '',
+                security:'',
+                zipCode:''
+            },
+        ],
+
         isLogin:false
     },
     reducers:{
@@ -21,13 +32,20 @@ const userSlice =createSlice({
                 ...state, userData: action.payload
             }
         },
+        saveCard:(state, action)=>{
+            console.log(action)
+            return {
+                ...state, userDataCards: [ ...state.userDataCards, action.payload]
+            }
+        }
     }
     
 })
 
 export const{
     setLogin,
-    setUserData
+    setUserData,
+    saveCard
 } = userSlice.actions
 
 export default userSlice.reducer

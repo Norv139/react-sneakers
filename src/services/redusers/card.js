@@ -20,10 +20,18 @@ const sliceCard = createSlice({
                 ]
             }
         },
-        closeOrOpenOrder: (state)=>{
+
+        dellAllItems:(store)=>{
             return {
-                ...state,  
-                isOpenCard: !state.isOpenCard
+                ...store,
+                cartItems: []
+            }
+        },
+
+        closeOrOpenOrder: (store, actions)=>{
+            return {
+                ...store,  
+                isOpenCard: !store.isOpenCard
             };
         }
     }
@@ -32,6 +40,7 @@ const sliceCard = createSlice({
 export const {
     addItems,
     dellItems,
+    dellAllItems,
     closeOrOpenOrder
 } = sliceCard.actions
 
