@@ -17,11 +17,12 @@ function App() {
   return (
     <div className='wrapper clear' style={{overflow: 'hidden'}}>
       
-    <BrowserRouter>
       <Header/>
       <ShoppingCart /> 
       
       <Routes>
+        
+        
         <Route path="/" element={<Store />} />
         
         <Route path="/profile" element={<Profile/>} />
@@ -29,7 +30,6 @@ function App() {
         <Route path="/formpay" element={<Payment/>} />
 
       </Routes>
-    </BrowserRouter>
     </div>
   );
 }
