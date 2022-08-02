@@ -48,7 +48,7 @@ function Store() {
     <main className='content p-40'>
       <div className='md-40 d-flex justify-between'>
 
-        <h1 className='mr-20'>{(searchValue === '') ? "все кросовки" : 'Поиск: '+searchValue}</h1>
+        <h1 className='mr-20'>{(searchValue === '') ? "все кросcовки" : 'Поиск: '+searchValue}</h1>
 
         <div className='search-block d-flex mb-30'>
           <img src='./img/find_icon.svg' alt='Search' />
